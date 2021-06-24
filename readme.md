@@ -2,6 +2,10 @@
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
+## Start here :wave:
+
+Sounded like a fun project and proof of concept. **Currently headed towards MVP** 🎆 
+
 ## Local Setup
 
 This app runs locally on [ngrok](https://ngrok.com/download). Let's summarize what we will need to do to get started.
