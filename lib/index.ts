@@ -5,10 +5,10 @@ const { createEventAdapter } = require('@slack/events-api');
 
 // Configures local environment
 const path = require('path');
-require('dotenv').config({path: path.resolve(__dirname, "../.env.local")})
+require('dotenv').config({path: path.resolve(__dirname, "../.env.local")});
 
 // local imports
-import { handleSlackInstall, handleOAuth, handleNgrokTestConnection, handleHome } from "./routes"
+import { handleSlackInstall, handleOAuth, handleNgrokTestConnection, handleHome } from "./routes";
 import { handleAppHomeOpen } from "./slack_events";
 
 // create express app
@@ -42,4 +42,4 @@ app.get('/oauth', handleOAuth);
 // When a user navigates to the app home, grab the token from our database and publish a view
 slackEvents.on('app_home_opened', handleAppHomeOpen);
 
-app.listen(port, () => console.log(`App listening on http://localhost:${port}`))
+app.listen(port, () => console.log(`App listening on http://localhost:${port}`));
