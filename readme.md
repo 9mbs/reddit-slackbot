@@ -6,6 +6,11 @@
 
 Sounded like a fun project and proof of concept. **Currently headed towards MVP** 🎆 
 
+**Static App Home**
+
+![Screen Shot 2021-06-24 at 9 29 39 PM](https://user-images.githubusercontent.com/53072963/123369860-705b1d80-d533-11eb-90b2-ce6ca81c8c12.png)
+
+
 ## Local Setup
 
 This app runs locally on [ngrok](https://ngrok.com/download). Let's summarize what we will need to do to get started.
