@@ -38,6 +38,8 @@ Once the ngrok server is online we will need to update the following URLs via ht
   - `https://e6829b5713d5.ngrok.io/ngrok`
 - [ ] **Features > Event Subscriptions > Request URL**
   - `https://e6829b5713d5.ngrok.io/slack/events`
+- [ ] **Features > Interactivity & Shortcuts > Request URL** 
+  - `https://e6829b5713d5.ngrok.io/interactive/components`
 
 ### Start express app 
 

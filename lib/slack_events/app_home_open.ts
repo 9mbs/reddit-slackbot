@@ -1,3 +1,5 @@
+import { homeObject } from "../utils/homeObject";
+
 const { WebClient } = require('@slack/web-api');
 
 export const handleAppHomeOpen = async (event: any, body: any) => {
@@ -5,19 +7,7 @@ export const handleAppHomeOpen = async (event: any, body: any) => {
     const web = new WebClient(process.env.SLACK_BOT_USER_OAUTH_TOKEN );
     await web.views.publish({
       user_id: event.user,
-      view: { 
-        "type":"home",
-        "blocks":[
-          {
-            "type": "section",
-            "block_id": "section678",
-            "text": {
-              "type": "mrkdwn",
-              "text": "Welcome to the App Home!"
-            },
-          }
-        ]
-      },
+      view: homeObject
     });
   }
   catch (error) {
