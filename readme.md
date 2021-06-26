@@ -30,16 +30,18 @@ mv .env.example .env.local
 ~/ngrok http 3009
 ```
 
-Once the ngrok server is online we will need to update the following URLs via https://api.slack.com/apps. _We are going to refer to `https://e6829b5713d5.ngrok.io` as the base URL for this example. Keep in mind you will be assigned a unique temporary ngrok URL when running the above command_
+Once the ngrok server is online we will need to update the URLs we plan on using via https://api.slack.com/apps. _We are going to refer to `https://e6829b5713d5.ngrok.io` as the base URL for this example. Keep in mind you will be assigned a unique temporary ngrok URL when running the above command_
+
+> Note: Currently migrating to @slack/bolt where all endpoints point to `/slack/events` will update as confirmation is recieved.
 
 - [ ] **Features > OAuth & Permissions**
   - `https://e6829b5713d5.ngrok.io/oauth`
 - [ ] **Features > Slash Commands**
-  - `https://e6829b5713d5.ngrok.io/ngrok`
-- [ ] **Features > Event Subscriptions > Request URL**
+  - `/memes` | https://e6829b5713d5.ngrok.io/slack/events
+- [ ] **Features > Event Subscriptions > Request URL** 
   - `https://e6829b5713d5.ngrok.io/slack/events`
 - [ ] **Features > Interactivity & Shortcuts > Request URL** 
-  - `https://e6829b5713d5.ngrok.io/interactive/components`
+  - `https://e6829b5713d5.ngrok.io/slack/events`
 
 ### Start express app 
 
@@ -75,11 +77,14 @@ require('dotenv').config({path: path.resolve(__dirname, "../.env.local")});
 console.log(path.resolve(__dirname, "../.env.local"));
 ```
 
-- **Slack App is does not have required permissions**
+- **Slack App does not have required permissions**
 - **Ngrok server shut down and needs to be restarted** 
 By default the ngrok URL is active for 2 hours at which point it will automatically timeout. When we reset the ngrok server we will need to update the base URL as defined in the [Start ngrok server](#start-ngrok-server) section. 
 
 This can be easily identify as the root issue to most unexpected errors. Be sure to keep an eye on your ngrok server throughout development.
+
+- **[Slash Commands] Reddit Bot needs to be invited to the channel** 
+Found this to be the case when migrating to @slack/bolt. [This thread on Stack Overflow](https://stackoverflow.com/questions/60198159/slack-api-conversations-history-returns-error-not-in-channel) helped provide a solution. 
 
 ## Contributing & more questions
 
