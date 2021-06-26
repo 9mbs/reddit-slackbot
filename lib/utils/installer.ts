@@ -1,5 +1,5 @@
 const { InstallProvider } = require('@slack/oauth');
-import { StoreInstallInterface, InstallInterface } from "../_types";
+import { StoreInstallInterface, InstallInterface } from '../_types';
 
 export const installer = new InstallProvider({
   clientId: process.env.SLACK_CLIENT_ID,
@@ -7,7 +7,11 @@ export const installer = new InstallProvider({
   authVersion: 'v2',
   stateSecret: 'my-state-secret',
   installationStore: {
-    storeInstallation: async ({ isEnterpriseInstall, enterprise, team }: StoreInstallInterface) => {
+    storeInstallation: async ({
+      isEnterpriseInstall,
+      enterprise,
+      team,
+    }: StoreInstallInterface) => {
       if (isEnterpriseInstall) {
         // storing org installation
         // console.log("isEnterpriseInstall: ", enterprise.id)
@@ -20,9 +24,13 @@ export const installer = new InstallProvider({
       }
       throw new Error('Failed saving installation data to installationStore');
     },
-    fetchInstallation: async ({ isEnterpriseInstall, enterpriseId, teamId }: InstallInterface) => {
+    fetchInstallation: async ({
+      isEnterpriseInstall,
+      enterpriseId,
+      teamId,
+    }: InstallInterface) => {
       if (isEnterpriseInstall) {
-        if (enterpriseId !== undefined) {       
+        if (enterpriseId !== undefined) {
           // fetching org installation
           // console.log("installQuery.enterpriseId", enterpriseId)
           return;
@@ -35,11 +43,15 @@ export const installer = new InstallProvider({
       }
       throw new Error('Failed fetching installation');
     },
-    deleteInstallation: async ({ isEnterpriseInstall, enterpriseId, teamId}: InstallInterface) => {
+    deleteInstallation: async ({
+      isEnterpriseInstall,
+      enterpriseId,
+      teamId,
+    }: InstallInterface) => {
       if (isEnterpriseInstall) {
         if (enterpriseId !== undefined) {
           // delete org installation
-        return;
+          return;
         }
       }
       if (teamId !== undefined) {

@@ -1,6 +1,35 @@
 // Express app
 // ts only likes import here 😩
-import { RequestHandler, Request, Response, NextFunction } from "express"; 
+import { RequestHandler, Request, Response, NextFunction } from 'express';
+
+export type BlockInterface = {
+  type: string;
+  block_id?: string;
+  text?: {
+    type: string;
+    // if title is over 25 chars turncate
+    text: string;
+    emoji?: boolean;
+  };
+  accessory?: {
+    type: string;
+    image_url: any;
+    alt_text: any;
+  };
+  elements?: {
+    type: string;
+    text:
+      | {
+          type: string;
+          text: string;
+          emoji?: boolean;
+        }
+      | string;
+    value?: string;
+    action_id?: string;
+    emoji?: boolean;
+  }[];
+};
 
 export type Method =
   | 'get'
@@ -13,7 +42,7 @@ export type Method =
   | 'trace'
   | 'patch';
 
-export type Handler = (req: Request, res: Response, next?: NextFunction) => any; 
+export type Handler = (req: Request, res: Response, next?: NextFunction) => any;
 
 export type Route = {
   method: Method;
@@ -24,12 +53,12 @@ export type Route = {
 
 export type StoreInstallInterface = {
   isEnterpriseInstall: boolean;
-  enterprise: { id: string; };
-  team: { id: string; };
-}
+  enterprise: { id: string };
+  team: { id: string };
+};
 
 export type InstallInterface = {
   isEnterpriseInstall: boolean;
   enterpriseId: string;
   teamId: string;
-}
+};
