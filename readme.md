@@ -4,7 +4,7 @@
 
 Browse through the most popular safe-for-work subreddits directly from <s>any</s> the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a>. This application is licensed under MIT. All 3rd party data is sourced directly from Reddit. 
 
-<!-- > Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> -->
+Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a>
 
 ## Slash Commands
 Command Name | Optional paramaters | Description 
@@ -13,7 +13,7 @@ Command Name | Optional paramaters | Description
 
 ## Start here :wave:
 
-A fun proof of concept. **Currently headed towards MVP** 🎆 
+This applicaiton was built to experiment with Slacks Bolt library. It is simply a fun proof of concept. 🎆 
 
 ## Local Setup
 
