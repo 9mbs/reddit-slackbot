@@ -2,9 +2,18 @@
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
+Browse through the most popular safe-for-work subreddits directly from <s>any</s> the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a>. This application is licensed under MIT. All 3rd party data is sourced directly from Reddit. 
+
+<!-- > Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> -->
+
+## Slash Commands
+Command Name | Optional paramaters | Description 
+---          |  ---                | ---
+/reddit      | r/any-subreddit     | The quickest way to browse is via the `/reddit` command. If no paramters are passed, the bot will display the reddit home page. If a valid paramater is passed, the bot will attempt to fetch or throw `"Whoops. Something went wrong"`.
+
 ## Start here :wave:
 
-Sounded like a fun project and proof of concept. **Currently headed towards MVP** 🎆 
+A fun proof of concept. **Currently headed towards MVP** 🎆 
 
 ## Local Setup
 
@@ -32,18 +41,35 @@ mv .env.example .env.local
 
 Once the ngrok server is online we will need to update the URLs we plan on using via https://api.slack.com/apps. _We are going to refer to `https://e6829b5713d5.ngrok.io` as the base URL for this example. Keep in mind you will be assigned a unique temporary ngrok URL when running the above command_
 
-> Note: Currently migrating to @slack/bolt where all endpoints point to `/slack/events` will update as confirmation is recieved.
 
-- [ ] **Features > OAuth & Permissions**
-  - `https://e6829b5713d5.ngrok.io/oauth`
 - [ ] **Features > Slash Commands**
-  - `/memes` | https://e6829b5713d5.ngrok.io/slack/events
+  - `/reddit` | https://e6829b5713d5.ngrok.io/slack/events
 - [ ] **Features > Event Subscriptions > Request URL** 
-  - `https://e6829b5713d5.ngrok.io/slack/events`
+  - https://e6829b5713d5.ngrok.io/slack/events
 - [ ] **Features > Interactivity & Shortcuts > Request URL** 
-  - `https://e6829b5713d5.ngrok.io/slack/events`
+  - https://e6829b5713d5.ngrok.io/slack/events
 
-### Start express app 
+### build local PostgreSQL database
+
+Installs from the Slack app will need to preserve unique information, since we are deploying to Heroku this seems like the most logic choice. This project is configured to use the `reddit_slackbot` database, let's create that from within the PostgreSQL terminal.
+
+```sql
+-- run this command once to create the database
+CREATE DATABASE reddit_slackbot
+```
+
+Now we can run the seed scripts to create the tables within our database, again this will be a one time command. Depending on your environment setup, you may be able to run the npm `db:create_tables` script. Alternatively if not using the `postgresql` as the primary user we can run the same command mannualy. 
+
+e.g
+```sh
+psql -U $USER -d reddit_slackbot -f ./database/init.sql
+```
+
+Let's also take a moment to verify the credentials used here also match the local database url used in the .env.example file. Once we've built the local database, we are ready to start the Bolt app.
+
+### Start the Bolt app 
+
+**What is Bolt?** For our understanding and general context, Bolt is a wrapper that sits on top of an Express server, used to Slack applications.
 
 Now we are ready to set up our source code. Assuming we have **set our environmental variables** this should be a quick and painless process. 
 
@@ -55,7 +81,7 @@ npm install
 # let's build that
 npm run build 
 
-# start the express app
+# start the Bolt app
 npm run start
 ```
 
@@ -88,4 +114,4 @@ Found this to be the case when migrating to @slack/bolt. [This thread on Stack O
 
 ## Contributing & more questions
 
-Let's continue the conversation over on [Slack]() :)
+To get involed, pick the brains of the developrs, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> 

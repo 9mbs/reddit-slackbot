@@ -1,5 +1,3 @@
-// Express app
-// ts only likes import here 😩
 import { RequestHandler, Request, Response, NextFunction } from 'express';
 
 export type BlockInterface = {
@@ -13,8 +11,17 @@ export type BlockInterface = {
   };
   accessory?: {
     type: string;
-    image_url: any;
-    alt_text: any;
+    image_url?: any;
+    alt_text?: any;
+    options?: {
+      text: {
+        type: string;
+        text: string;
+        emoji: boolean;
+      };
+      url?: string;
+      value: string;
+    }[];
   };
   elements?: {
     type: string;
