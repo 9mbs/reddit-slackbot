@@ -3,4 +3,4 @@ node_modules
 .env.local
 
 # ignore output directory
-dist
+# dist
