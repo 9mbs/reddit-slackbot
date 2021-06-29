@@ -53,29 +53,6 @@ export const buildingBlocks = ({ introBlocks, data }: any) => {
             dateCreated,
           )} · :thumbsup: ${data.score}`,
         },
-        accessory: {
-          type: 'overflow',
-          options: [
-            {
-              text: {
-                type: 'plain_text',
-                text: 'View Post on Reddit',
-                emoji: true,
-              },
-              value: 'view_on_reddit',
-              url: viewOnReddit,
-            },
-            {
-              text: {
-                type: 'plain_text',
-                text: 'View Author on Reddit',
-                emoji: true,
-              },
-              value: 'change_response',
-              url: cardAuthor,
-            },
-          ],
-        },
       };
 
       const card: BlockInterface = {

@@ -16,7 +16,7 @@ import {
 import { BlockInterface } from './types';
 
 // init database instance
-const database = db('slack_installs');
+const database = db('slack_reviews');
 
 // Heroku will use this to assign unique port
 // hardcode should match ngrok server
@@ -55,7 +55,7 @@ app.event('app_home_opened', async ({ event, context }: any) => {
 
 app.command('/reddit', async ({ command, ack, say, context, payload }: any) => {
   // let url = "https://www.reddit.com"
-  // // looks for `r/sub`
+  // looks for `r/sub`
   // const subreddit = /r\/[a-zA-Z\d_]+/
   // if(!subreddit.test(command.text)){
   //   url += "/hot.json";
