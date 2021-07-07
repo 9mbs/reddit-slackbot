@@ -21,17 +21,16 @@ const buildingBlocks = ({ introBlocks, data }) => {
                 .replace(/\s+/g, '_')
                 .toLowerCase()}`;
             const cardAuthor = `https://reddit.com/user/${data.author}`;
-            let text = "";
+            let text = '';
             // slack limits to 3001 chars
             // if description is longer than 268 chars truncate
             if (data.selftext.length > 268) {
                 const truncate = data.selftext.slice(0, 268);
-                text += truncate + "...";
+                text += truncate + '...';
             }
             else {
                 text += data.selftext;
             }
-            ;
             // base card
             const cardInfo = {
                 type: 'section',
@@ -40,37 +39,14 @@ const buildingBlocks = ({ introBlocks, data }) => {
                     type: 'mrkdwn',
                     text: `*${data.title.replace(/[\d\w]{25}/, '...')}*\nu/${data.author.replace(/[\d\w]{25}/, '...')} · ${timeSince_1.timeSince(currentDate, dateCreated)} · :thumbsup: ${data.score}`,
                 },
-                "accessory": {
-                    "type": "overflow",
-                    "options": [
-                        {
-                            "text": {
-                                "type": "plain_text",
-                                "text": "View Post on Reddit",
-                                "emoji": true
-                            },
-                            "value": "view_on_reddit",
-                            "url": viewOnReddit,
-                        },
-                        {
-                            "text": {
-                                "type": "plain_text",
-                                "text": "View Author on Reddit",
-                                "emoji": true
-                            },
-                            "value": "change_response",
-                            "url": cardAuthor,
-                        },
-                    ]
-                }
             };
             const card = {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": `${data.url_overridden_by_dest === undefined
+                type: 'section',
+                text: {
+                    type: 'mrkdwn',
+                    text: `${data.url_overridden_by_dest === undefined
                         ? '\n\n' + text
-                        : '\n\n' + data.url_overridden_by_dest}`
+                        : '\n\n' + data.url_overridden_by_dest}`,
                 },
             };
             // optional thumbnail
@@ -83,7 +59,7 @@ const buildingBlocks = ({ introBlocks, data }) => {
             };
             // if thumbnail exists set card with image
             // else send text only
-            data.thumbnail === "" ? card : (card.accessory = thumbnail);
+            data.thumbnail === '' ? card : (card.accessory = thumbnail);
             blocks.push(cardInfo);
             // push UI component
             blocks.push(card);
@@ -96,26 +72,4 @@ const buildingBlocks = ({ introBlocks, data }) => {
     return blocks;
 };
 exports.buildingBlocks = buildingBlocks;
-// {
-//   "type": "section",
-//   "text": {
-//     "type": "mrkdwn",
-//     "text": "*Team Lunch (Internal)*\nCost: *$85.50USD*\nDate: *10/16/2019*\nService Provider: *Honest Sandwiches*  \nExpense no. *<fakelink.toUrl.com|#1797PD>*"
-//   },
-//   "accessory": {
-//     "type": "image",
-//     "image_url": "https://api.slack.com/img/blocks/bkb_template_images/creditcard.png",
-//     "alt_text": "credit card"
-//   }
-// },
-// `\n${cardAuthor} · ${timeSince(
-//   currentDate,
-//   dateCreated,
-// )} · :thumbsup: ${data.score}
-// // ${
-//   data.url_overridden_by_dest === undefined
-//     ? '\n\n' + text
-//     : '\n\n' + data.url_overridden_by_dest
-//   // ? '\n' + data.selftext.replace(/[\d\w]{25}/, '...')
-// }`
 //# sourceMappingURL=buildingBlocks.js.map

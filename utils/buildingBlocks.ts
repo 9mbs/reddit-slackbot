@@ -97,26 +97,3 @@ export const buildingBlocks = ({ introBlocks, data }: any) => {
 
   return blocks;
 };
-
-// {
-//   "type": "section",
-//   "text": {
-//     "type": "mrkdwn",
-//     "text": "*Team Lunch (Internal)*\nCost: *$85.50USD*\nDate: *10/16/2019*\nService Provider: *Honest Sandwiches*  \nExpense no. *<fakelink.toUrl.com|#1797PD>*"
-//   },
-//   "accessory": {
-//     "type": "image",
-//     "image_url": "https://api.slack.com/img/blocks/bkb_template_images/creditcard.png",
-//     "alt_text": "credit card"
-//   }
-// },
-// `\n${cardAuthor} · ${timeSince(
-//   currentDate,
-//   dateCreated,
-// )} · :thumbsup: ${data.score}
-// // ${
-//   data.url_overridden_by_dest === undefined
-//     ? '\n\n' + text
-//     : '\n\n' + data.url_overridden_by_dest
-//   // ? '\n' + data.selftext.replace(/[\d\w]{25}/, '...')
-// }`

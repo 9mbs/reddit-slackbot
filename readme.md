@@ -1,8 +1,12 @@
-# Reddit Slackbot
+# Reddit Slack bot
 
 ![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
 
 Browse through the most popular safe-for-work subreddits directly from <s>any</s> the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a>. This application is licensed under MIT. All 3rd party data is sourced directly from Reddit. 
+
+<p align="center">
+  <img src="./public/demo.gif" />
+</p>
 
 Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a>
 
@@ -13,7 +17,7 @@ Command Name | Optional paramaters | Description
 
 ## Start here :wave:
 
-This applicaiton was built to experiment with Slacks Bolt library. It is simply a fun proof of concept. 🎆 
+This application was built to experiment with Slacks Bolt library. It is simply a fun proof of concept. 🎆 
 
 ## Local Setup
 
@@ -74,7 +78,7 @@ Let's also take a moment to verify the credentials used here also match the loca
 Now we are ready to set up our source code. Assuming we have **set our environmental variables** this should be a quick and painless process. 
 
 ```sh
-# install project dependecies
+# install project dependencies
 npm install
 
 # we ignore /dist by default
@@ -91,7 +95,7 @@ At this point we should be presented with the standard `app listening on http://
 
 - **Your environmental variables aren't being read by dotenv.**  
 
-Check out the [./lib/index.ts](./lib/index.ts) file and verify that your `.env.local` file matches the absolute pathing specificed in the `dotenv.config()` method.
+Check out the [./lib/index.ts](./lib/index.ts) file and verify that your `.env.local` file matches the absolute path specified in the `dotenv.config()` method.
 
 ```ts
 const path = require('path');
@@ -114,4 +118,4 @@ Found this to be the case when migrating to @slack/bolt. [This thread on Stack O
 
 ## Contributing & more questions
 
-To get involed, pick the brains of the developrs, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> 
+To get involved, pick the brains of the developrs, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> 
