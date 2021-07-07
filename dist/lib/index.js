@@ -20,7 +20,7 @@ const node_fetch_1 = __importDefault(require("node-fetch"));
 // local imports
 const utils_1 = require("../utils");
 // Heroku will use this to assign unique port
-// hardcode should match ngrok server
+// hard code should match ngrok server
 // https://github.com/hi-matbub/reddit-slackbot#start-ngrok-server
 const port = process.env.PORT || 3009;
 // create slack app
@@ -82,7 +82,7 @@ app.command('/reddit', ({ command, ack, say, context, payload }) => __awaiter(vo
         });
     }
     catch (error) {
-        say("Whoops. :rotating_light: Something wen't wrong.");
+        say("Whoops. :rotating_light: Something went wrong.");
     }
     // Acknowledge command request
     yield ack();

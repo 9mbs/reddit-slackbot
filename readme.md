@@ -8,12 +8,12 @@ Browse through the most popular safe-for-work subreddits directly from <s>any</s
   <img src="./public/demo.gif" />
 </p>
 
-Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a>
+Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@ Ghst Solutions Slack Workspace</a>
 
 ## Slash Commands
-Command Name | Optional paramaters | Description 
+Command Name | Optional parameters | Description 
 ---          |  ---                | ---
-/reddit      | r/any-subreddit     | The quickest way to browse is via the `/reddit` command. If no paramters are passed, the bot will display the reddit home page. If a valid paramater is passed, the bot will attempt to fetch or throw `"Whoops. Something went wrong"`.
+/reddit      | r/any-subreddit     | The quickest way to browse is via the `/reddit` command. If no parameters are passed, the bot will display the reddit home page. If a valid parameter is passed, the bot will attempt to fetch or throw `"Whoops. Something went wrong"`.
 
 ## Start here :wave:
 
@@ -62,7 +62,7 @@ Installs from the Slack app will need to preserve unique information, since we a
 CREATE DATABASE reddit_slackbot
 ```
 
-Now we can run the seed scripts to create the tables within our database, again this will be a one time command. Depending on your environment setup, you may be able to run the npm `db:create_tables` script. Alternatively if not using the `postgresql` as the primary user we can run the same command mannualy. 
+Now we can run the seed scripts to create the tables within our database, again this will be a one time command. Depending on your environment setup, you may be able to run the npm `db:create_tables` script. Alternatively if not using the `postgresql` as the primary user we can run the same command manually. 
 
 e.g
 ```sh

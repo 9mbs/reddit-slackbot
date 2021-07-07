@@ -11,7 +11,7 @@ import { buildHomeScreen, buildingBlocks, buildQuery } from '../utils';
 import { BlockInterface } from './types';
 
 // Heroku will use this to assign unique port
-// hardcode should match ngrok server
+// hard code should match ngrok server
 // https://github.com/hi-matbub/reddit-slackbot#start-ngrok-server
 const port = process.env.PORT || 3009;
 
@@ -78,7 +78,7 @@ app.command('/reddit', async ({ command, ack, say, context, payload }: any) => {
       text: "Here's what I found",
     });
   } catch (error: any) {
-    say("Whoops. :rotating_light: Something wen't wrong.");
+    say("Whoops. :rotating_light: Something went wrong.");
   }
 
   // Acknowledge command request

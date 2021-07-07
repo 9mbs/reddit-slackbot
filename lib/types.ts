@@ -5,7 +5,6 @@ export type BlockInterface = {
   block_id?: string;
   text?: {
     type: string;
-    // if title is over 25 chars truncate
     text: string;
     emoji?: boolean;
   };
