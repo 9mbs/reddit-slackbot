@@ -4,20 +4,18 @@
 
 Browse through the most popular safe-for-work subreddits directly from <s>any</s> the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a>. This application is licensed under MIT. All 3rd party data is sourced directly from Reddit. 
 
+> This application was built to experiment with Slacks Bolt library. It is simply a fun proof of concept. 
+
 <p align="center">
   <img src="./public/demo.gif" />
 </p>
 
-Preview live <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@ Ghst Solutions Slack Workspace</a>
+Preview live @ <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a>
 
 ## Slash Commands
 Command Name | Optional parameters | Description 
 ---          |  ---                | ---
 /reddit      | r/any-subreddit     | The quickest way to browse is via the `/reddit` command. If no parameters are passed, the bot will display the reddit home page. If a valid parameter is passed, the bot will attempt to fetch or throw `"Whoops. Something went wrong"`.
-
-## Start here :wave:
-
-This application was built to experiment with Slacks Bolt library. It is simply a fun proof of concept. 🎆 
 
 ## Local Setup
 
@@ -52,22 +50,6 @@ Once the ngrok server is online we will need to update the URLs we plan on using
   - https://e6829b5713d5.ngrok.io/slack/events
 - [ ] **Features > Interactivity & Shortcuts > Request URL** 
   - https://e6829b5713d5.ngrok.io/slack/events
-
-### build local PostgreSQL database
-
-Installs from the Slack app will need to preserve unique information, since we are deploying to Heroku this seems like the most logic choice. This project is configured to use the `reddit_slackbot` database, let's create that from within the PostgreSQL terminal.
-
-```sql
--- run this command once to create the database
-CREATE DATABASE reddit_slackbot
-```
-
-Now we can run the seed scripts to create the tables within our database, again this will be a one time command. Depending on your environment setup, you may be able to run the npm `db:create_tables` script. Alternatively if not using the `postgresql` as the primary user we can run the same command manually. 
-
-e.g
-```sh
-psql -U $USER -d reddit_slackbot -f ./database/init.sql
-```
 
 Let's also take a moment to verify the credentials used here also match the local database url used in the .env.example file. Once we've built the local database, we are ready to start the Bolt app.
 
@@ -118,4 +100,4 @@ Found this to be the case when migrating to @slack/bolt. [This thread on Stack O
 
 ## Contributing & more questions
 
-To get involved, pick the brains of the developrs, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">@Ghst Solutions Slack Workspace</a> 
+To get involved, pick the brains of the developer, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a> 
