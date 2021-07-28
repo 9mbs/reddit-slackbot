@@ -73,6 +73,14 @@ npm run start
 
 At this point we should be presented with the standard `app listening on http://localhost:3009` message in the terminal. This is a great point to begin testing your Slack connections.
 
+<details>
+    <summary>Frequent reasons this process might fail</summary>
+
+  
+  
+  
+
+
 ### Frequent reasons this process might fail
 
 - **Your environmental variables aren't being read by dotenv.**  
@@ -97,6 +105,8 @@ This can be easily identify as the root issue to most unexpected errors. Be sure
 
 - **[Slash Commands] Reddit Bot needs to be invited to the channel** 
 Found this to be the case when migrating to @slack/bolt. [This thread on Stack Overflow](https://stackoverflow.com/questions/60198159/slack-api-conversations-history-returns-error-not-in-channel) helped provide a solution. 
+  
+</details>
 
 ## Contributing & more questions
 
