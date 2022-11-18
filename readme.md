@@ -108,6 +108,3 @@ Found this to be the case when migrating to @slack/bolt. [This thread on Stack O
   
 </details>
 
-## Contributing & more questions
-
-To get involved, pick the brains of the developer, or just hang out head over to the <a href="https://join.slack.com/t/ghstsolutions/shared_invite/zt-s0jyi58m-SU2Gr9XMKUTnJbUcEiAXoQ">Ghst Solutions Slack Workspace</a> 
